@@ -31,6 +31,25 @@
     <%= form.number_field :age %>
   </div>
 
+<br>
+<h1>Name of railway lines</h1>
+<%= form.fields_for :stations do |f| %>
+  <div class="field">
+    <%= f.label :railway_name %>
+    <%= f.text_field :railway_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :station_name %>
+    <%= f.text_area :station_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :walking_minutes %>
+    <%= f.number_field :walking_minutes %>
+  </div>
+<% end %>
+
   <div class="actions">
     <%= form.submit %>
   </div>

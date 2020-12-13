@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-
+<h1>Property</h1>
 <p>
   <strong>Property name:</strong>
   <%= @property.property_name %>
@@ -19,6 +19,26 @@
   <strong>Age:</strong>
   <%= @property.age %>
 </p>
+
+
+<br>
+<h1>Railway line(s)</h1>
+  <% @stations.each do |s| %>
+<p>
+  <strong>Railway name:</strong>
+  <%=s.railway_name %>
+</p>
+
+<p>
+  <strong>Station name:</strong>
+  <%=s.station_name %>
+</p>
+
+<p>
+  <strong>Walking minutes:</strong>
+  <%=s.walking_minutes %>
+</p>
+  <% end %>
 
 <%= link_to 'Edit', edit_property_path(@property) %> |
 <%= link_to 'Back', properties_path %>
