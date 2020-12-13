@@ -15,10 +15,12 @@ class PropertiesController < ApplicationController
   # GET /properties/new
   def new
     @property = Property.new
+    2.times{@property.stations.build}
   end
 
   # GET /properties/1/edit
   def edit
+      1.times{@property.stations.build}
   end
 
   # POST /properties
@@ -69,6 +71,6 @@ class PropertiesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def property_params
-      params.require(:property).permit(:property_name, :rent, :address, :age)
+      params.require(:property).permit(:property_name, :rent, :address, :age, :stations_attributes[:id, :railway_name, :station_name, :walking_minutes])
     end
 end
