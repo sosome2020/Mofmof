@@ -10,6 +10,7 @@ class PropertiesController < ApplicationController
   # GET /properties/1
   # GET /properties/1.json
   def show
+    @stations=@property.stations.order(walking_minutes: "ASC")
   end
 
   # GET /properties/new
